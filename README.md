@@ -1,1 +1,1 @@
-# step-by-step_case_id_identifier
+# Step-by-Step Case ID Identifier based on Activity Connection for Cross-Organizational Process Mining
