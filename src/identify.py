@@ -8,7 +8,7 @@ def main():
   parser = ArgumentParser()
   parser.add_argument('dataset')
   args = parser.parse_args()
-  load(args.dataset)
+  load.to_csv(args.dataset)
 
 
 
