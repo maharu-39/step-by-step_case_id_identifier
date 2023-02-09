@@ -8,7 +8,7 @@ This repository contains the source code for the paper "Step-by-Step Case ID Ide
 step-by-step_case_id_identifier
 |- datasets/
         |- BPI_Challenge_2012.xes
-        |- BPI Challenge 2017.xes
+        |- BPI_Challenge_2017.xes
 |- src/
   ...
 ```
