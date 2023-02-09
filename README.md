@@ -11,6 +11,8 @@ step-by-step_case_id_identifier
         |- BPI_Challenge_2017.xes
 |- src/
   ...
+|- results/
+  ...
 ```
 
 ### Download dataset
