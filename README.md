@@ -4,8 +4,17 @@ This repository contains the source code for the paper "Step-by-Step Case ID Ide
 
 
 ## Getting Started
+```
+step-by-step_case_id_identifier
+|- datasets/
+        |- BPI_Challenge_2012.xes
+        |- BPI Challenge 2017.xes
+|- src/
+  ...
+```
 
 ### Download dataset
+Please download datasets, [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Challenge_2012/12689204), [BPIC2017](https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884).
 
 ### Requirements
 
