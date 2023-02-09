@@ -20,6 +20,7 @@ Please download datasets, [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Ch
 
 ### Dependencies
 - Python 3.6
+- numpy 1.19.5
 - pandas 1.1.5
 - pm4py 2.5.1
 
