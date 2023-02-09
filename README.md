@@ -22,6 +22,7 @@ Please download datasets, [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Ch
 
 ### Quick demo
 `python3 src/identify.py BPI Challenge 2017.xes`
+
 This will produce integrated event logs under `step-by-step_case_id_identifier/results/`.
 
 
