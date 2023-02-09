@@ -19,9 +19,9 @@ step-by-step_case_id_identifier
 Please download datasets, [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Challenge_2012/12689204), [BPIC2017](https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884).
 
 ### Dependencies
-- Python 3.10
-- numpy 1.19.5
-- pandas 1.1.5
+- Python 3.10.10
+- numpy 1.23.1
+- pandas 1.4.4
 - pm4py 2.5.1
 
 ### Quick demo
