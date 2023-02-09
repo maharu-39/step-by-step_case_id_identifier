@@ -16,7 +16,12 @@ step-by-step_case_id_identifier
 ### Download dataset
 Please download datasets, [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Challenge_2012/12689204), [BPIC2017](https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884).
 
-### Requirements
+### Dependencies
+- Python 3.6
+- pm4py 2.5.1
+
+### Quick demo
+`python3 src/identify.py BPI Challenge 2017.xes`
 
 
 https://github.com/yoichiro0406/cascading_feature_extraction
