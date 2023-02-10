@@ -1,5 +1,6 @@
 .DS_Store
 *.xes
+*.csv
 *.ipynb
 
 # Byte-compiled / optimized / DLL files
