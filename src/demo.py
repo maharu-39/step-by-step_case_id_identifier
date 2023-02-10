@@ -4,15 +4,16 @@ import datetime as dt
 import os.path as osp
 from argparse import ArgumentParser
 
-import process
+import pre_process
 import identify
+import post_process
 
 def main():
     parser = ArgumentParser()
     parser.add_argument('datasets')
     args = parser.parse_args()
-    process.to_csv(args.datasets)
-    process.process(f"{osp.splitext(args.datasets)[0]}.csv")
+    pre_process.to_csv(args.datasets)
+    pre_process.process(f"{osp.splitext(args.datasets)[0]}.csv")
   
     df = pd.read_csv("datasets/edited/aando.csv")
     tmp = df["time:timestamp"].str.split('+').to_numpy()
@@ -39,13 +40,16 @@ def main():
                 bo += 1
         else:
             tmp[i[2]] = {i[3][-1]}
+    boundary = bo * 0.01
     
 
     n1 = [1,4,16,64,256,1000,4000,16000]
     v = [0,1,2,3,4,6,8]
     n2 = [1,4,16,64,256,1000,4000,16000]
     T_set = [dt.timedelta(seconds=1),dt.timedelta(seconds=10),dt.timedelta(seconds=100),dt.timedelta(seconds=1000)]
-    identify.identify(t,n1,v,n2,T_set,bo)
+    ans = identify.identify(t,n1,v,n2,T_set,bo)
+    index = post_process.select_param(ans)
+    post_process.eval(t,ans,index,boundary)
 
 
 

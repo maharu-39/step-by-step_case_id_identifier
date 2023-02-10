@@ -60,11 +60,8 @@ def case_cor(t,cor,inter,c_pattern, T_threshold,n1_threshold,v1_threshold,n2_thr
     for_sort = []
     
     #　指標1.1の整理
-    import matplotlib.pyplot as plt
     m = 40
-    plt.xlim(0,m)
     li = list(c_pattern.values())
-    plt.hist(li, bins=100,range=(0,m))
     
     for k, v in c_pattern.items():
         if v > v1_threshold:
@@ -307,3 +304,4 @@ def identify(t,n1,v,n2,T_set,bo):
                         ans.append([c,correct_num/(correct_num+miss),correct_num/(bo*2),out,cor,len(cor)/(bo*2)])
                     else:
                         ans.append([c,'-','-',out,cor,len(cor)/(bo*2)])
+    return ans
