@@ -14,8 +14,9 @@ def main():
     args = parser.parse_args()
     pre_process.to_csv(args.datasets)
     pre_process.process(f"{osp.splitext(args.datasets)[0]}.csv")
-  
-    df = pd.read_csv("datasets/edited/aando.csv")
+
+    path = "datasets/edited/aando.csv"
+    df = pd.read_csv(path)
     tmp = df["time:timestamp"].str.split('+').to_numpy()
     time = []
     for i in tmp:
@@ -23,8 +24,15 @@ def main():
     event = df["concept:name"].to_numpy()
     case = df["case:concept:name"]
     t = []
-    for i in range(len(tmp)):
-        t.append([dt.datetime.fromisoformat(time[i].replace(' ','T')), event[i],case[i]])
+    if f"{osp.splitext(args.datasets)[0]}.csv" == "datasets/BPI_Challenge_2017.csv":
+        for i in range(len(tmp)):
+            t.append([dt.datetime.fromisoformat(time[i].replace(' ','T')), event[i],case[i]])
+    elif f"{osp.splitext(args.datasets)[0]}.csv" == "datasets/BPI_Challenge_2012.csv":
+        for i in range(len(tmp)):
+            t.append([dt.datetime.fromisoformat(time[i].replace(' ','T')), event[i],str(case[i])])
+    else:
+        print("DATASET ERROR")
+        exit()
     t.sort()
     for i in t:
         if i[1][0] == 'A':
@@ -47,12 +55,14 @@ def main():
     v = [0,1,2,3,4,6,8]
     n2 = [1,4,16,64,256,1000,4000,16000]
     T_set = [dt.timedelta(seconds=1),dt.timedelta(seconds=10),dt.timedelta(seconds=100),dt.timedelta(seconds=1000)]
+    #n1 = [4]
+    #v = [1]
+    #n2 = [4]
+    #T_set = [dt.timedelta(seconds=1)]
     ans = identify.identify(t,n1,v,n2,T_set,bo)
     index = post_process.select_param(ans)
     post_process.eval(t,ans,index,boundary)
-
-
-
+    post_process.save(t,ans,index,f"{osp.splitext(osp.basename(args.datasets))[0]}_{osp.basename(path)}")
 
 
 if __name__ == '__main__':

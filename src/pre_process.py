@@ -23,9 +23,18 @@ def process(dataset):
   process data
   '''
   data = pd.read_csv(dataset)
-  aandw = data[(data["EventOrigin"] == "Application") | (data["EventOrigin"] == "Workflow")]
-  aando = data[(data["EventOrigin"] == "Application") | (data["EventOrigin"] == "Offer")]
-  oandw = data[(data["EventOrigin"] == "Offer") | (data["EventOrigin"] == "Workflow")]
+  print(dataset)
+  if dataset == "datasets/BPI_Challenge_2017.csv":
+    aandw = data[(data["EventOrigin"] == "Application") | (data["EventOrigin"] == "Workflow")]
+    aando = data[(data["EventOrigin"] == "Application") | (data["EventOrigin"] == "Offer")]
+    oandw = data[(data["EventOrigin"] == "Offer") | (data["EventOrigin"] == "Workflow")]
+  elif dataset == "datasets/BPI_Challenge_2012.csv":
+    aandw = data[data["concept:name"].str.startswith("A") | data["concept:name"].str.startswith("W")]
+    aando = data[data["concept:name"].str.startswith("A") | data["concept:name"].str.startswith("O")]
+    oandw = data[data["concept:name"].str.startswith("O") | data["concept:name"].str.startswith("W")]
+  else:
+    print("DATASET ERROR\n")
+    exit()
   data["time:timestamp"] = data["time:timestamp"].map(f)
   aandw["time:timestamp"] = aandw["time:timestamp"].map(f)
   aando["time:timestamp"] = aando["time:timestamp"].map(f)

@@ -1,4 +1,5 @@
 from collections import defaultdict
+import csv
 
 def select_param(ans):
   ans.sort(key=lambda x: x[0])
@@ -50,8 +51,32 @@ def eval(t,ans,index,boundary):
 
   
   #ケース対応付け
-  print("case:precisionは",ans[index][1])
-  print("case:precisionは",ans[index][2])
+  print("case:precision",ans[index][1])
+  print("case:precision",ans[index][2])
   # 正解フローは何本か
-  print("flow:precisionは",same/num)
-  print("flow:recallは",same/cor_num)
+  print("flow:precision",same/num)
+  print("flow:recall",same/cor_num)
+
+
+def save(t,ans,index,out_path):
+  fin = {}
+  token = 0
+  for k,v in ans[index][4].items():
+      if k not in fin and v not in fin:
+          fin[k] = token
+          fin[v] = token
+          token += 1
+
+  for i in range(len(t)):
+      if t[i][3] in fin:
+          t[i].append(fin[t[i][3]])
+  ansdata = [["time","activity","real","tmp","case"]]
+  for i in t:
+      if len(i) == 5:
+          ansdata.append(i)
+  for i in range(1,len(ansdata)):
+      ansdata[i][0] = ansdata[i][0].strftime('%Y-%m-%d %H:%M:%S.%f')
+  f = open(f"results/{out_path}", 'w', newline='')
+  writer = csv.writer(f)
+  writer.writerows(ansdata)
+  f.close()
