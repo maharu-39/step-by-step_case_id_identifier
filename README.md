@@ -24,7 +24,7 @@ Please download datasets, [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Ch
 - pandas 1.4.4
 - pm4py 2.5.1
 
-*** In case Arm-Based Macs, run below command to avoid an error.
+*** In case of Arm-Based Mac, run below command to avoid an error.
 `pip uninstall cvxopt`
 
 ### Quick demo
