@@ -31,7 +31,3 @@ Please download datasets, [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Ch
 `python3 src/demo.py datasets/BPI_Challenge_2017.xes`
 
 This will produce integrated event logs (A+O) under `step-by-step_case_id_identifier/results/`.
-
-
-https://github.com/yoichiro0406/cascading_feature_extraction
-https://github.com/una-dinosauria/3d-pose-baseline
