@@ -26,8 +26,8 @@ def main():
   bo = int(args.case_num)
   for i in range(len(time)):
       t.append([time[i], task[i],case[i]])
-  sup = {} # ケースがkeyで(タスク,時間)のプロセスがvalue
-  tmp = {} # ケースがkeyでプロセスがvalueの辞書
+  sup = {} 
+  tmp = {} 
   for i in range(len(case)):
       if case[i] in tmp:
           tmp[case[i]].append(task[i])

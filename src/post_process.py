@@ -10,7 +10,6 @@ def select_param(ans):
   return index
 
 def eval(t,ans,index,boundary):
-  # 正解データのとりこみ(2017,2012兼用 / ノイズ除去機構あり)
   dic = {}
   for i in t:
       if i[2] not in dic:
@@ -49,13 +48,10 @@ def eval(t,ans,index,boundary):
           if cor_flow[k] > 0:
               same += 1
 
-  
-  #ケース対応付け
-  print("case:precision",ans[index][1])
-  print("case:precision",ans[index][2])
-  # 正解フローは何本か
-  print("flow:precision",same/num)
-  print("flow:recall",same/cor_num)
+  print("case precision",ans[index][1])
+  print("case recall",ans[index][2])
+  print("flow precision",same/num)
+  print("flow recall",same/cor_num)
 
 
 def save(t,ans,index,out_path):

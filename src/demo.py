@@ -54,12 +54,9 @@ def main():
     n1 = [1,4,16,64,256,1000,4000,16000]
     v = [0,1,2,3,4,6,8]
     n2 = [1,4,16,64,256,1000,4000,16000]
+    org_name = 'O' # set 'A' or 'O' or 'W', which is one of a pair of integrated organizations
     T_set = [dt.timedelta(seconds=1),dt.timedelta(seconds=10),dt.timedelta(seconds=100),dt.timedelta(seconds=1000)]
-    #n1 = [4]
-    #v = [1]
-    #n2 = [4]
-    #T_set = [dt.timedelta(seconds=1)]
-    ans = identify.identify(t,n1,v,n2,T_set,bo)
+    ans = identify.identify(t,n1,v,n2,T_set,bo,org_name)
     index = post_process.select_param(ans)
     post_process.eval(t,ans,index,boundary)
     post_process.save(t,ans,index,f"{osp.splitext(osp.basename(args.datasets))[0]}_{osp.basename(path)}")
