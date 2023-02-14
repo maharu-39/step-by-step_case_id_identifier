@@ -6,7 +6,8 @@ This repository contains the source code for the paper "Step-by-Step Case ID Ide
 ## Getting Started
 
 ### Download dataset
-Please download datasets, [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Challenge_2012/12689204), [BPIC2017](https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884).
+Download datasets from [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Challenge_2012/12689204), [BPIC2017](https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884).
+
 Please unzip the files and place them as follows.
 
 ```
