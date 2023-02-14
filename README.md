@@ -28,6 +28,7 @@ step-by-step_case_id_identifier
 - pm4py 2.5.1
 
 *** In case of Arm-Based Mac, run below command to avoid an error.
+
 `pip uninstall cvxopt`
 
 ### Quick demo
