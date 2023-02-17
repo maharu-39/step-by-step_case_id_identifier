@@ -1,3 +1,5 @@
+# Copyright (C) 2023 The University of Tokyo and Nippon Telegraph and Telephone Corporation
+
 import pm4py
 import pandas as pd
 import os
