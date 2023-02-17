@@ -1,3 +1,5 @@
+# Copyright (C) 2023 The University of Tokyo and Nippon Telegraph and Telephone Corporation
+
 import pandas as pd
 import numpy as np
 import datetime as dt

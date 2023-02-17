@@ -6,6 +6,7 @@ This repository contains the source code for the paper "Step-by-Step Case ID Ide
 ## Getting Started
 
 ### Download dataset
+
 Download datasets from [BPIC2012](https://data.4tu.nl/articles/dataset/BPI_Challenge_2012/12689204), [BPIC2017](https://data.4tu.nl/articles/dataset/BPI_Challenge_2017/12696884).
 
 Please unzip the files and place them as follows.
@@ -22,6 +23,7 @@ step-by-step_case_id_identifier
 ```
 
 ### Dependencies
+
 - Python 3.10.10
 - numpy 1.23.1
 - pandas 1.4.4
@@ -32,6 +34,13 @@ step-by-step_case_id_identifier
 `pip uninstall cvxopt`
 
 ### Quick demo
+
 `python3 src/demo.py datasets/BPI_Challenge_2017.xes`
 
 This will produce integrated event logs (A+O) under `step-by-step_case_id_identifier/results/`.
+
+### License
+
+Copyright (C) 2023 The University of Tokyo and Nippon Telegraph and Telephone Corporation
+
+You may obtain a copy of the License at [Licence](LICENSE)
